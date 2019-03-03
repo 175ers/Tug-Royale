@@ -1,6 +1,7 @@
 extends Node
 
 signal swiped(direction)
+signal swiped_at(direction, position)
 signal swipe_canceled(start_position)
 
 export(float, 1.0, 1.5) var MAX_DIAGONAL_SLOPE = 1.3
@@ -29,8 +30,10 @@ func _end_detection(position):
 		
 	if abs(direction.x) > abs(direction.y):
 		emit_signal('swiped', Vector2(-(direction.x), 0.0))
+		emit_signal('swiped_at', Vector2(-(direction.x), 0.0), swipe_start_position)
 	else:
 		emit_signal('swiped', Vector2(0.0, -(direction.y)))
+		emit_signal('swiped_at', Vector2(0.0, -(direction.y)), swipe_start_position)
 	
 		
 func _on_Timer_timeout():
