@@ -22,13 +22,20 @@ var velocity = Vector2()
 
 var isPressedOrNot
 
+
+
+if x < 0:
+	self.translate(Vector2(speed, 0.0))
+
+
+
 func _pressDetector():
 	isPressedOrNot = is_pressed()
 	if isPressedOrNot == true:
 		speed = 0.0
-		self.translate(Vector2(0.0, speed))
+		self.translate(Vector2(speed, 0.0))
 	else:
-		self.translate(Vector2(0.0, speed))
+		self.translate(Vector2(speed, 0.0))
 
 
 	

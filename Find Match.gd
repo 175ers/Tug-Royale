@@ -16,5 +16,5 @@ func _ready():
 
 
 func _on_Find_Match_pressed():
-	get_tree().change_scene("res://Create Lobby.tscn")
+	get_tree().change_scene("res://Title Name.tscn")
 	pass # replace with function body

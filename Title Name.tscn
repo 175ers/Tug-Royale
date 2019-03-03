@@ -111,7 +111,7 @@ use_filter = false
 font_data = SubResource( 11 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Title Name" type="Node" index="0"]
+[node name="Title Name" type="Node"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 
