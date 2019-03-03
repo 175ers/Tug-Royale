@@ -11,7 +11,13 @@ config_version=3
 [application]
 
 config/name="New Game Project"
+run/main_scene="res://Title Name.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=600
+window/size/height=1024
 
 [rendering]
 
