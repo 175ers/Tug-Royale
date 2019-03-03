@@ -1,9 +1,17 @@
 extends Node
 
+const DEFAULT_IP = '127.0.0.1'
 const DEFAULT_PORT = 31416
 const MAX_PEERS = 10
 var players = {}
 var player_status
+
+#Signals to Lobby
+signal player_list_changed()
+signal connection_failed()
+signal connection_succeeded()
+signal game_ended()
+signal game_error(what)
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -15,9 +23,9 @@ func _ready():
 	get_tree().connect("server_disconnected", self, "_server_disconnect")
 
 # Start a server
-func start_server():
-	player_status = 'Server'
-	var host = NeworkedMultiplayerENet.new()
+func start_server(name):
+	player_status = name
+	var host = NetworkedMultiplayerENet.new()
 	var server = host.create_server(DEFAULT_PORT, MAX_PEERS)
 
 	# if(server != ok): # If server doesnt start, join a server with IP
@@ -29,9 +37,9 @@ func start_server():
 # Join a server with specifc IP
 func join_server(name, ip_address):
 	player_status = name
-	var host = NeworkedMultiplayerENet.new()
+	var host = NetworkedMultiplayerENet.new()
 
-	host.create_client(ip_address, DEFAULT_PORT)
+	host.create_client(DEFAULT_IP, DEFAULT_PORT)
 	get_tree().set_network_peer(host)
 
 # Player has connected
@@ -39,21 +47,30 @@ func _player_connected(id):
 	pass
 
 func _player_disconnected(id):
-	# If I am server, send a signal to inform that an player disconnected
-	unregister_player(id)
-	rpc("unregister_player", id)
-	
+	if(get_tree().is_network_server()):
+		if has_node("/root/world"):
+			emit_signal("game_error", "Player " + players[id] + " disconnected")
+			end_game()
+		else:
+			players.erase(id)
+			emit_signal("player_list_changed")
 	
 # Successfully connected to server (client)
-func _connected_ok():
+func _connected_ready():
 	# Send signal to server that we are ready to be assigned;
 	# Either to lobby or ingame
 	rpc_id(1, "user_ready", get_tree().get_network_unique_id(), player_name)
 	pass
 
+#func _connected_fail():
 
+
+func _server_disconnect():
+	quit_game()	
 	
-
+func quit_game():
+	get_tree().set_network_peer(null)
+	players.clear()
 
 
 
