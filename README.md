@@ -40,6 +40,6 @@ Install to make friends and compete?
 
 [Jungle For Kids UI Wallpaper by Yodobi](http://1.bp.blogspot.com/_rAtsAxS0R1Q/TSgM01oPpuI/AAAAAAAAAJI/Za9w3eU9hT8/s1600/AA008_BG_sc149_Ext_Jungle_Road.jpg)
 
-[Coconut Clip Car by OCAL](http://www.clker.com/clipart-25954.html)
+[Coconut Clip Art by OCAL](http://www.clker.com/clipart-25954.html)
 
 [Rope PNG by Frozen Ropes (Syosset, New York)](https://www.frozenropes.com/syosset/)
