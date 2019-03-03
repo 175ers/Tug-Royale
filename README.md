@@ -25,3 +25,24 @@ Learning Godot. Networking. Cross-platform mobile apps.
 ## What's next for Tug-Royale:
 
 Install to make friends and compete?
+
+
+## Credits
+
+Simplicity Font by Billy Argel
+
+Swore Games Font by Chequered Ink
+
+Jungle For Kids UI Wallpaper by Yodobi
+
+Coconut Clip Car by OCAL
+
+Rope PNG by Frozen Ropes (Syosset, New York)
+
+
+
+
+
+
+
+
