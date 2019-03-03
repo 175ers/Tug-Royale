@@ -4,7 +4,7 @@ extends Node2D
 # var a = 2
 # var b = "textvar"
 var status = "disconnected"
-
+var team = 0
 var clients = []
 
 func _ready():
@@ -27,7 +27,7 @@ func host_server():
 	pass
 	
 func rope_listen():
-	
+	#update rope on screen
 	pass
 	
 func pull_rope():
@@ -37,4 +37,19 @@ func pull_rope():
 	else:
 		# you are the host
 		pass
+	pass
+	
+func end_listen(winning_team):
+	if winning_team == self.team:
+		pass
+	else:
+		pass
+	pass
+	
+func announce_end():
+	#for client in clients.... announce win
+	pass
+	
+func announce_rope():
+	#for client in clients.... announce rope status
 	pass
