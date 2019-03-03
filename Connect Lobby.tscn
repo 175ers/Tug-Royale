@@ -81,7 +81,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Connect Lobby Elements" type="Node" index="0"]
+[node name="Connect Lobby Elements" type="Node"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 

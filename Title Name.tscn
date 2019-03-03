@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Find Match.gd" type="Script" id=1]
+[ext_resource path="res://Connect to Match.gd" type="Script" id=1]
+[ext_resource path="res://Create a Match.gd" type="Script" id=2]
 
 [sub_resource type="StreamTexture" id=1]
 
@@ -111,7 +112,7 @@ use_filter = false
 font_data = SubResource( 11 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Title Name" type="Node"]
+[node name="Title Name" type="Node" index="0"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 
@@ -150,7 +151,7 @@ shape_visible = true
 passby_press = false
 action = ""
 visibility_mode = 0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Screen Press Top" type="Label" parent="." index="3"]

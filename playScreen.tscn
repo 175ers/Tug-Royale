@@ -104,7 +104,7 @@ tracks/0/keys = {
 "values": [ Vector2( 223, 610 ), Vector2( 223, 553 ) ]
 }
 
-[node name="Title Name" type="Node" index="0"]
+[node name="Title Name" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
