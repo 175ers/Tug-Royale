@@ -1,21 +1,22 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Jungle Title Screen Background .jpg" type="Texture" id=1]
+[ext_resource path="res://coconut-hi.png" type="Texture" id=2]
 
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=1]
 
 hinting = 2
 font_path = "res://simplicity_4/SIMPLICITY PERSONALUSE.ttf"
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=2]
 
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 8 )
+font_data = SubResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Flashing"
 length = 1.0
@@ -34,20 +35,20 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=6]
+[sub_resource type="DynamicFontData" id=4]
 
 hinting = 2
 font_path = "res://Splatch.ttf"
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 
 size = 80
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 6 )
+font_data = SubResource( 4 )
 _sections_unfolded = [ "Font" ]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=6]
 
 resource_name = "Move Toward Screen"
 length = 1.0
@@ -66,20 +67,20 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -215 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=7]
 
 hinting = 2
 font_path = "res://swore_games/Swore Games.otf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=8]
 
 size = 22
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 4 )
+font_data = SubResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=9]
 
 resource_name = "Move Toward Screen"
 length = 1.0
@@ -98,7 +99,7 @@ tracks/0/keys = {
 "values": [ Vector2( 223, 610 ), Vector2( 223, 553 ) ]
 }
 
-[node name="Title Name" type="Node" index="0"]
+[node name="Menu Name" type="Node" index="0"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 
@@ -108,26 +109,32 @@ position = Vector2( 515.504, 301.211 )
 scale = Vector2( 0.641693, 0.671127 )
 texture = ExtResource( 1 )
 
-[node name="Screen Press" type="Label" parent="." index="1"]
+[node name="coconut-hi" type="Sprite" parent="." index="1"]
+
+position = Vector2( 940.46, 74.5306 )
+scale = Vector2( 0.165875, 0.165875 )
+texture = ExtResource( 2 )
+
+[node name="Screen Press" type="Label" parent="." index="2"]
 
 modulate = Color( 1, 1, 1, 0.892596 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 338.0
-margin_top = 302.0
-margin_right = 704.0
-margin_bottom = 362.0
+margin_left = 720.0
+margin_top = 41.0
+margin_right = 881.0
+margin_bottom = 101.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
-text = "PRESS SCREEN TO START"
+text = "GO BACK"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -141,12 +148,13 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Flashing = SubResource( 10 )
+anims/Flashing = SubResource( 3 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Game Title" type="Label" parent="." index="2"]
+[node name="Game Title" type="Label" parent="." index="3"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -159,7 +167,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.734375, 0.627159, 0.206543, 1 )
 text = "TUG ROYALE"
 align = 1
@@ -175,11 +183,12 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Move Toward Screen" = SubResource( 11 )
+"anims/Move Toward Screen" = SubResource( 6 )
 blend_times = [  ]
 
-[node name="Copyright label" type="Label" parent="." index="3"]
+[node name="Copyright label" type="Label" parent="." index="4"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -194,9 +203,9 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.660156, 0.560532, 0.105728, 1 )
-text = "Copyright 175ers Games"
+text = "© Copyright 175ers Games"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -210,7 +219,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Move Toward Screen" = SubResource( 12 )
+"anims/Move Toward Screen" = SubResource( 9 )
 blend_times = [  ]
 
 
