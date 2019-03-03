@@ -1,12 +1,22 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Jungle Title Screen Background .jpg" type="Texture" id=1]
-[ext_resource path="res://Find Match.gd" type="Script" id=2]
+[ext_resource path="res://Find Match.gd" type="Script" id=1]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="StreamTexture" id=10]
+
+flags = 4
+load_path = "res://.import/Jungle Title Screen Background .jpg-a24573a06bc9e70a7985b3a128968e43.stex"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
-radius = 1000.0
+extents = Vector2( 0.5, 0.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 0.5, 0.5 )
 
 [sub_resource type="DynamicFontData" id=2]
 
@@ -22,6 +32,24 @@ font_data = SubResource( 2 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=4]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
 
 length = 1.0
 loop = true
@@ -83,37 +111,59 @@ use_filter = false
 font_data = SubResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Title Name" type="Node"]
+[node name="Title Name" type="Node" index="0"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="Find Match" type="TouchScreenButton" parent="." index="0"]
+[node name="Jungle Title Screen Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( -1482, 0 )
-scale = Vector2( 1.42143, 1.42143 )
-normal = ExtResource( 1 )
+position = Vector2( -346.597, 641.559 )
+scale = Vector2( 1.41872, 1.41872 )
+texture = SubResource( 10 )
+
+[node name="Connect to Match" type="TouchScreenButton" parent="." index="1"]
+
+position = Vector2( 715.896, 607.217 )
+scale = Vector2( -710.332, -605.796 )
+normal = null
 pressed = null
 bitmask = null
-shape = SubResource( 1 )
+shape = SubResource( 11 )
 shape_centered = true
 shape_visible = true
 passby_press = false
 action = ""
 visibility_mode = 0
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Screen Press" type="Label" parent="." index="1"]
+[node name="Create a Match" type="TouchScreenButton" parent="." index="2"]
+
+position = Vector2( 715.896, 1279.86 )
+scale = Vector2( -710.332, -663.943 )
+normal = null
+pressed = null
+bitmask = null
+shape = SubResource( 12 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Screen Press Top" type="Label" parent="." index="3"]
 
 modulate = Color( 1, 1, 1, 0.892596 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 132.0
-margin_top = 522.0
-margin_right = 593.0
-margin_bottom = 582.0
+margin_left = 88.0
+margin_top = 302.0
+margin_right = 657.0
+margin_bottom = 362.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -122,14 +172,14 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
-text = "TAP SCREEN TO FIND MATCH"
+text = "TAP HERE TO CONNECT TO A MATCH"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen Press" index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen Press Top" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -140,15 +190,53 @@ anims/Flashing = SubResource( 4 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Game Title" type="Label" parent="." index="2"]
+[node name="Screen Press Bottom" type="Label" parent="." index="4"]
+
+modulate = Color( 1, 1, 1, 0.892596 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 127.0
+margin_top = 899.0
+margin_right = 593.0
+margin_bottom = 959.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
+text = "TAP HERE TO CREATE A MATCH"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Screen Press Bottom" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Flashing = SubResource( 13 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Game Title" type="Label" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 210.0
-margin_right = 716.0
-margin_bottom = 374.0
+margin_left = -3.0
+margin_top = 60.0
+margin_right = 713.0
+margin_bottom = 224.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -174,7 +262,7 @@ playback_speed = 1.0
 "anims/Move Toward Screen" = SubResource( 7 )
 blend_times = [  ]
 
-[node name="Copyright label" type="Label" parent="." index="3"]
+[node name="Copyright label" type="Label" parent="." index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -208,6 +296,8 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 blend_times = [  ]
 
-[connection signal="pressed" from="Find Match" to="Find Match" method="_on_Find_Match_pressed"]
+[connection signal="pressed" from="Connect to Match" to="Connect to Match" method="_on_Find_Match_pressed"]
+
+[connection signal="pressed" from="Create a Match" to="Create a Match" method="_on_Find_Match_pressed"]
 
 
