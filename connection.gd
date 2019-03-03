@@ -7,9 +7,9 @@ var status = "disconnected"
 var team = 0
 var clients = []
 
-const SEVER_PORT = 12452
+const SERVER_PORT = 12452
 const MAX_PLAYERS = 36
-var SEVER_IP = '1.1.1.1'
+var SEVRER_IP = '1.1.1.1'
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
