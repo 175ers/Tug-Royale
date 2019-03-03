@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Find Match.gd" type="Script" id=1]
 [ext_resource path="res://coconut-hi.png" type="Texture" id=2]
+[ext_resource path="res://Create Lobby.gd" type="Script" id=3]
 
 [sub_resource type="StreamTexture" id=1]
 
@@ -81,6 +82,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 200, 100 )
+
 [node name="Connect Lobby Elements" type="Node" index="0"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
@@ -107,7 +113,7 @@ visibility_mode = 0
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Loading Message 1" type="Label" parent="." index="2"]
+[node name="Blah" type="Label" parent="." index="2"]
 
 modulate = Color( 1, 1, 1, 0.892596 )
 anchor_left = 0.0
@@ -133,7 +139,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Loading Message 1" index="0"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Blah" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -230,6 +236,22 @@ position = Vector2( 628.69, 73.7303 )
 scale = Vector2( 0.154971, 0.154971 )
 texture = ExtResource( 2 )
 
+[node name="Create Lobby" type="TouchScreenButton" parent="." index="6"]
+
+position = Vector2( 320, 470 )
+normal = null
+pressed = null
+bitmask = null
+shape = SubResource( 8 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+script = ExtResource( 3 )
+
 [connection signal="pressed" from="Return to Title Screen" to="Return to Title Screen" method="_on_Find_Match_pressed"]
+
+[connection signal="pressed" from="Create Lobby" to="Create Lobby" method="_on_Create_Lobby_pressed"]
 
 

@@ -7,6 +7,10 @@ var status = "disconnected"
 var team = 0
 var clients = []
 
+const SEVER_PORT = 12452
+const MAX_PLAYERS = 36
+var SEVER_IP = '1.1.1.1'
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -17,13 +21,18 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func connect_to_server():
+func init_client():
 	status = "client"
+	var peer = NetworkedMultiplayerENet.new()
+	peer.create_client(SERVER_IP, SERVER_PORT)
+	get_tree().set_network_peer(peer)
 	pass
 	
-func host_server():
+func init_network():
 	status = "host"
-	
+	var peer = NetworkedMultiplayerENet.new()
+	peer.create_server(SERVER_PORT, MAX_PLAYERS)
+	get_tree().set_network_peer(peer)
 	pass
 	
 func rope_listen():
