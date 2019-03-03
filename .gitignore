@@ -1,0 +1,16 @@
+
+# This gitignore file is coped from:
+# https://github.com/github/gitignore/blob/master/Godot.gitignore
+
+# But github also has a (similar) godot gitignore at:
+# https://github.com/github/gitignore/blob/master/Godot.gitignore
+
+
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# Mono-specific ignores
+.mono/
