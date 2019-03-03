@@ -1,0 +1,229 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Find Match.gd" type="Script" id=1]
+[ext_resource path="res://coconut-hi.png" type="Texture" id=2]
+
+[sub_resource type="StreamTexture" id=1]
+
+flags = 4
+load_path = "res://.import/Jungle Title Screen Background .jpg-a24573a06bc9e70a7985b3a128968e43.stex"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 0.3, 0.3 )
+
+[sub_resource type="DynamicFontData" id=3]
+
+hinting = 2
+font_path = "res://simplicity_4/SIMPLICITY PERSONALUSE.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 58
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Animation" id=5]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Connect Lobby Elements" type="Node" index="0"]
+
+_sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
+
+[node name="Jungle Title Screen Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( -346.597, 641.559 )
+scale = Vector2( 1.41872, 1.41872 )
+texture = SubResource( 1 )
+
+[node name="Return to Title Screen" type="TouchScreenButton" parent="." index="1"]
+
+position = Vector2( 708.639, 149.854 )
+scale = Vector2( -163.576, -152.649 )
+normal = null
+pressed = null
+bitmask = null
+shape = SubResource( 2 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Loading Message 1" type="Label" parent="." index="2"]
+
+modulate = Color( 1, 1, 1, 0.892596 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 88.0
+margin_top = 302.0
+margin_right = 657.0
+margin_bottom = 362.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
+text = "TAP HERE TO CONNECT TO A MATCH"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loading Message 1" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Flashing = SubResource( 5 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Back Button" type="Label" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.892596 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 399.0
+margin_top = 46.0
+margin_right = 571.0
+margin_bottom = 106.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
+text = "GO BACK"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Back Button" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Flashing = SubResource( 6 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Loading Message 2" type="Label" parent="." index="4"]
+
+modulate = Color( 1, 1, 1, 0.892596 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 127.0
+margin_top = 899.0
+margin_right = 593.0
+margin_bottom = 959.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
+text = "TAP HERE TO CREATE A MATCH"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Loading Message 2" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Flashing = SubResource( 7 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="coconut-hi" type="Sprite" parent="." index="5"]
+
+position = Vector2( 628.69, 73.7303 )
+scale = Vector2( 0.154971, 0.154971 )
+texture = ExtResource( 2 )
+
+[connection signal="pressed" from="Return to Title Screen" to="Return to Title Screen" method="_on_Find_Match_pressed"]
+
+
