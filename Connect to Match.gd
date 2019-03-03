@@ -14,7 +14,7 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-
-func _on_Find_Match_pressed():
-	get_tree().change_scene("res://Connect Lobby.tscn")
-	pass # replace with function body
+#
+#func _on_Connect_to_Match_pressed():
+#	get_tree().change_scene("res://Connect Lobby.tscn")
+#	pass # replace with function body

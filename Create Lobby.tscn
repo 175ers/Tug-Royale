@@ -87,7 +87,7 @@ tracks/0/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 200, 100 )
 
-[node name="Connect Lobby Elements" type="Node" index="0"]
+[node name="Connect Lobby Elements" type="Node"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 
@@ -132,7 +132,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
-text = "TAP HERE TO CONNECT TO A MATCH"
+text = "Create match"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0

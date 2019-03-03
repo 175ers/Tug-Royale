@@ -9,6 +9,12 @@ func _ready():
 	# Initialization here
 	pass
 
-func _on_Create_a_Match_pressed():
-	get_tree().change_scene("res://Create Lobby.tscn")
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
+
+
+func _on_Connect_Match_pressed():
+	get_tree().change_scene("res://Connect Lobby.tscn")
 	pass # replace with function body
