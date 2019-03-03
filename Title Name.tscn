@@ -104,9 +104,10 @@ _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 
 [node name="Jungle Title Screen Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( -149.565, 641.778 )
-scale = Vector2( 1.08696, 1.42143 )
+position = Vector2( -410, 640 )
+scale = Vector2( 1.42143, 1.42143 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Screen Press" type="Label" parent="." index="1"]
 
