@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Find Match.gd" type="Script" id=1]
 [ext_resource path="res://coconut-hi.png" type="Texture" id=2]
+[ext_resource path="res://connectMatchButton.gd" type="Script" id=3]
 
 [sub_resource type="StreamTexture" id=1]
 
@@ -81,6 +82,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 100, 100 )
+
 [node name="Connect Lobby Elements" type="Node"]
 
 _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
@@ -151,10 +157,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 50.0
-margin_top = 80.0
-margin_right = 222.0
-margin_bottom = 140.0
+margin_left = 400.0
+margin_top = 40.0
+margin_right = 572.0
+margin_bottom = 100.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -224,6 +230,23 @@ position = Vector2( 628.69, 73.7303 )
 scale = Vector2( 0.154971, 0.154971 )
 texture = ExtResource( 2 )
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." index="6"]
+
+position = Vector2( 400, 400 )
+normal = null
+pressed = null
+bitmask = null
+shape = SubResource( 8 )
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+script = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
 [connection signal="pressed" from="Return to Title Screen" to="Return to Title Screen" method="_on_Find_Match_pressed"]
+
+[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_TouchScreenButton_pressed"]
 
 

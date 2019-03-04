@@ -6,7 +6,9 @@ extends Node
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	# Initialization 
+	get_tree().connect('network_peer_disconnected', self, '_on_player_disconnected')
+	get_tree().connect('server_disconnected', self, '_on_server_disconnected')
 	pass
 
 #func _process(delta):

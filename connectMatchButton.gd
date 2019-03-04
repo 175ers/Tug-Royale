@@ -4,6 +4,9 @@ extends TouchScreenButton
 # var a = 2
 # var b = "textvar"
 
+var team = 1
+onready var n = get_tree().get_root().get_child(0)
+	
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -14,7 +17,8 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-#
-#func _on_Connect_to_Match_pressed():
-#	get_tree().change_scene("res://Connect Lobby.tscn")
-#	pass # replace with function body
+
+func _on_TouchScreenButton_pressed():
+	n.connect_to_server(team)
+	get_tree().change_scene('res://playScreen.tscn')
+	pass # replace with function body

@@ -4,11 +4,15 @@ extends TouchScreenButton
 # var a = 2
 # var b = "textvar"
 
-onready var conn = get_tree().get_root().find_node("connection")
+var team = 1
+onready var n = get_tree().get_root().get_child(0)
+
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	if n == null:
+		n = get_tree().get_root().find_node("Network")
 	pass
 
 #func _process(delta):
@@ -18,5 +22,14 @@ func _ready():
 
 
 func _on_Create_Lobby_pressed():
-	conn.init_network()
+	n.create_server(team)
+	get_tree().change_scene('res://playScreen.tscn')
+	pass # replace with function body
+
+
+func _on_CheckButton_toggled(button_pressed):
+	if button_pressed:
+		team = 2
+	else:
+		team = 1
 	pass # replace with function body

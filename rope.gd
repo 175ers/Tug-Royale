@@ -18,13 +18,13 @@ func _process(delta):
 	elif target_y < self.position.y:
 			self.translate(Vector2(0.0, -speed * delta))
 
-	print  (str(target_y) + " " + str(self.position.y))
+	#print  (str(target_y) + " " + str(self.position.y))
 	
 	pass
 
 
 func _on_SwipeDetector_swiped(direction):
 	if direction.y < 0:
-		target_y -= direction.y / 20
+		target_y -= direction.y / 5
 	pass # replace with function body
 

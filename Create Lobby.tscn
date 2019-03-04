@@ -250,8 +250,34 @@ action = ""
 visibility_mode = 0
 script = ExtResource( 3 )
 
+[node name="CheckButton" type="CheckButton" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 130.0
+margin_right = 206.0
+margin_bottom = 170.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+
 [connection signal="pressed" from="Return to Title Screen" to="Return to Title Screen" method="_on_Find_Match_pressed"]
 
 [connection signal="pressed" from="Create Lobby" to="Create Lobby" method="_on_Create_Lobby_pressed"]
+
+[connection signal="toggled" from="CheckButton" to="Create Lobby" method="_on_CheckButton_toggled"]
 
 

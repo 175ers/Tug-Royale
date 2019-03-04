@@ -9,23 +9,41 @@ flags = 4
 load_path = "res://.import/Jungle Title Screen Background .jpg-a24573a06bc9e70a7985b3a128968e43.stex"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 0.4, 0.4 )
 
-[sub_resource type="DynamicFontData" id=4]
+[sub_resource type="DynamicFontData" id=3]
 
 hinting = 2
 font_path = "res://simplicity_4/SIMPLICITY PERSONALUSE.ttf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 
 size = 58
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 4 )
+font_data = SubResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="Animation" id=5]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -45,38 +63,20 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
-
-length = 1.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="DynamicFontData" id=8]
+[sub_resource type="DynamicFontData" id=7]
 
 hinting = 2
 font_path = "res://Splatch.ttf"
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 
 size = 65
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 8 )
+font_data = SubResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=9]
 
 length = 1.0
 loop = false
@@ -94,20 +94,20 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -215 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=11]
+[sub_resource type="DynamicFontData" id=10]
 
 hinting = 2
 font_path = "res://swore_games/Swore Games.otf"
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=11]
 
 size = 29
 use_mipmaps = false
 use_filter = false
-font_data = SubResource( 11 )
+font_data = SubResource( 10 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=12]
 
 custom_solver_bias = 0.0
 extents = Vector2( 100, 100 )
@@ -118,7 +118,7 @@ _sections_unfolded = [ "Visibility", "custom_fonts", "custom_styles" ]
 
 [node name="Jungle Title Screen Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( -346.597, 641.559 )
+position = Vector2( -350, 640 )
 scale = Vector2( 1.41872, 1.41872 )
 texture = SubResource( 1 )
 
@@ -129,7 +129,7 @@ scale = Vector2( -710.332, -663.943 )
 normal = null
 pressed = null
 bitmask = null
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 shape_centered = true
 shape_visible = true
 passby_press = false
@@ -155,7 +155,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
 text = "TAP HERE TO CONNECT TO A MATCH"
 align = 1
@@ -171,7 +171,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Flashing = SubResource( 6 )
+anims/Flashing = SubResource( 5 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -192,7 +192,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.804688, 0.613388, 0.160309, 1 )
 text = "TAP HERE TO CREATE A MATCH"
 align = 1
@@ -208,7 +208,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Flashing = SubResource( 7 )
+anims/Flashing = SubResource( 6 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -228,7 +228,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.734375, 0.627159, 0.206543, 1 )
 text = "TUG ROYALE"
 align = 1
@@ -244,7 +244,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Move Toward Screen" = SubResource( 10 )
+"anims/Move Toward Screen" = SubResource( 9 )
 blend_times = [  ]
 
 [node name="Copyright label" type="Label" parent="." index="5"]
@@ -263,7 +263,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0.660156, 0.560532, 0.105728, 1 )
 text = "Copyright 175ers Games"
 align = 1
@@ -287,7 +287,7 @@ position = Vector2( 370, 350 )
 normal = null
 pressed = null
 bitmask = null
-shape = SubResource( 13 )
+shape = SubResource( 12 )
 shape_centered = true
 shape_visible = true
 passby_press = false
